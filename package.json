@@ -1,7 +1,7 @@
 {
   "name": "whistling-landing-page",
   "version": "0.1.0",
-  "homepage": "https:///Gaz1x.github.io/whistiling-landing-page",
+  "homepage": "https://Gaz1x.github.io/whistiling-landing-page",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^3.35.0",
