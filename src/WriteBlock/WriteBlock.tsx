@@ -1,17 +1,16 @@
-import React from 'react';
 import { Container, Flex, Box } from '@chakra-ui/react';
 import HeroContent from './components/HeroContent';
 import HeroImage from './components/HeroImage';
 
-const WriteBlock: React.FC = () => {
+function WriteBlock() {
   return (
-    <Box py={16} bg="white">
+    <Box py={4} bg="white">
       <Container maxW="container.xl">
         <Flex
           direction={{ base: 'column', lg: 'row' }}
           align="center"
           justify="space-between"
-          gap={8}
+          gap={{base: 4, lg: 0}}
         >
           <HeroContent />
           <HeroImage />

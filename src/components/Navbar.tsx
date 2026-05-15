@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   Flex,
@@ -11,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { MapPin, Star, CircleHelp, Menu, X } from 'lucide-react';
 
-import logo from './images/logo.jpg';
+import logo from './images/circleLogo.png';
 
 const links = [
   { label: 'О мастер-классе', icon: MapPin, href: '#about' },
@@ -19,24 +18,30 @@ const links = [
   { label: 'FAQ', icon: CircleHelp, href: '#faq' },
 ];
 
-const Navbar: React.FC = () => {
+interface navbarProps {
+  pageActive: number;
+};
+
+function Navbar({pageActive}: navbarProps) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Container 
-      position="sticky" 
+      position="sticky"
+      top={0}
+      zIndex="sticky"
       bg="white" 
       maxW="container.xl"
       mx="auto"
       borderBottom="2px solid" 
       borderColor="gray.100"
     >
-      <Container maxW="100%" px={{ base: 4, md: 8 }} py={2}>
+      <Container maxW="100%" px={{ base: 4, md: 8 }} py={1}>
         <Flex h={20} justify="space-between" align="center" wrap="nowrap">
           <Flex align="center" gap={3} flexShrink={0}>
             <Box 
-              w={20} 
-              h={20} 
+              w={12} 
+              h={12} 
               bg="yellow.100" 
               borderRadius="full" 
               display="flex" 
@@ -66,23 +71,21 @@ const Navbar: React.FC = () => {
             align="center"
             flexShrink={0}
           >
-            {links.map(({ label, icon: Icon, href }) => (
+            {links.map((item, idx) => (
               <Link 
-                key={label} 
-                href={href} 
-                display="flex" 
+                key={item.label} 
+                href={item.href} 
+                display="flex"
                 alignItems="center" 
                 gap={2} 
                 color="gray.600" 
                 fontSize="sm"
                 fontWeight="500"
-                textDecoration="none !important"
+                textDecoration={idx + 1 === pageActive ? "underline" : "none !important"}
                 _hover={{ color: 'gray.900' }}
-                transition="color 0.2s"
-                whiteSpace="nowrap"
               >
-                <Icon size={16} />
-                {label}
+                <item.icon size={16} />
+                {item.label}
               </Link>
             ))}
           </Flex>
@@ -104,10 +107,10 @@ const Navbar: React.FC = () => {
             display={{ base: 'block', md: 'none' }}
             mt={2}
           >
-            {links.map(({ label, icon: Icon, href }) => (
+            {links.map((item, idx) => (
               <Link 
-                key={label} 
-                href={href} 
+                key={item.label} 
+                href={item.href} 
                 display="flex" 
                 alignItems="center" 
                 gap={3} 
@@ -115,12 +118,12 @@ const Navbar: React.FC = () => {
                 px={2}
                 color="gray.700"
                 fontWeight="medium"
-                textDecoration="none !important"
+                textDecoration={idx + 1 === pageActive ? "underline" : "none !important"}
                 _hover={{ bg: 'gray.50', borderRadius: 'md' }}
                 onClick={onToggle}
               >
-                <Icon size={18} />
-                {label}
+                <item.icon size={18} />
+                {item.label}
               </Link>
             ))}
           </Box>

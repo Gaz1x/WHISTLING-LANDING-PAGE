@@ -1,12 +1,10 @@
-import React from 'react';
 import { Box, Flex, Image } from '@chakra-ui/react';
 import { Users, UserCheck } from 'lucide-react';
 import StatsCard from './StatsCard';
 
-// import heroImageSrc from '../images/hero.png'; 
+import heroImageSrc from '../images/hero.png'; 
 
-const heroImageSrc = "fdsf.jpg";
-const HeroImage: React.FC = () => {
+function HeroImage() {
   return (
     <Box 
       flex={{ base: '1', lg: '1.5' }} 
@@ -17,35 +15,31 @@ const HeroImage: React.FC = () => {
       mt={{ base: 8, lg: 0 }}
       order={{ base: 1, lg: 2}}
     >
-      {/* Декоративный фон (светлое пятно за парнем) */}
       <Box
         position="absolute"
-        w="90%"
-        h="90%"
+        w="100%"
+        h="100%"
         bg="purple.100"
         borderRadius="full"
-        zIndex={0}
         opacity={0.5}
       />
 
-      {/* Основная картинка */}
       <Image
         src={heroImageSrc}
-        alt="Boy whistling"
+        alt="Hero"
         zIndex={1}
-        maxH={{ base: '300px', md: '500px' }}
+        maxH="500px"
         w="auto"
-        // fallback если картинки нет
         fallback={<Box w="300px" h="300px" bg="gray.200" borderRadius="full" />}
       />
 
-      {/* Карточки статистики, висящие поверх */}
       <Flex
         position="absolute"
-        bottom={{ base: 0, md: 8 }}
-        right={{ base: 0, md: 8 }}
         zIndex={2}
         gap={4}
+        justifyContent="center"
+        w="100%"
+        bottom={{ base: 2, md: 4 }}
       >
         <StatsCard 
           icon={Users} 
