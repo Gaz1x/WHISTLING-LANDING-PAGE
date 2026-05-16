@@ -11,6 +11,5 @@ npm run build
 
 # Используемые библиотеки
 1. ChakraUI - компоненты ``` npm i @chakra-ui/react @emotion/react @emotion/styled ```
-2. Framer Motion - анимации ```npm install framer-motion```
-3. Web Audio Api - работа с микрофоном
-4. Lucide - иконки ```npm install lucide-react```
+2. Web Audio Api - работа с микрофоном
+3. Lucide - иконки ```npm install lucide-react```

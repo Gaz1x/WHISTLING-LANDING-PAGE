@@ -4,7 +4,7 @@ import HeroImage from './components/HeroImage';
 
 function WriteBlock() {
   return (
-    <Box py={4} bg="white">
+    <Box py={4} bg="white" mb={4}>
       <Container maxW="container.xl">
         <Flex
           direction={{ base: 'column', lg: 'row' }}

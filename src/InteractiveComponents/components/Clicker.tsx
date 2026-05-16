@@ -21,7 +21,10 @@ import {
 } from '@chakra-ui/react';
 import { Info, Star, CheckCircle, Percent, Mouse } from 'lucide-react';
 
-import faceImage from '../images/face.png';
+import hero0 from '../images/hero0.png';
+import hero25 from '../images/hero25.png';
+import hero50 from '../images/hero50.png';
+import hero75 from '../images/hero75.png';
 
 interface clickerProps {
   maxClicks: number;
@@ -34,6 +37,7 @@ function Clicker({maxClicks, discount, decrease, timeout} : clickerProps) {
   const [clicks, setClicks] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const progress = (clicks / maxClicks) * 100;
+  const clickerImage = progress < 25 ? hero0 : progress < 50 ? hero25 : progress < 75 ? hero50 : hero75;   
   const isComplete = clicks >= maxClicks;
   const toast = useToast();
 
@@ -57,6 +61,7 @@ function Clicker({maxClicks, discount, decrease, timeout} : clickerProps) {
     });
     onClose();
   }
+
   useEffect(() => {
         if (isComplete) return;
 
@@ -73,8 +78,9 @@ function Clicker({maxClicks, discount, decrease, timeout} : clickerProps) {
       borderRadius="2xl"
       p={5}
       boxShadow="0 4px 20px rgba(0,0,0,0.08)"
-      maxW="400px"
+      w="400px"
       mx="auto"
+      position="relative"
     >
       <Box display="flex" justifyContent="end">
         <Tooltip 
@@ -97,22 +103,14 @@ function Clicker({maxClicks, discount, decrease, timeout} : clickerProps) {
 
         {/* Картинка с кружками для клика */}
         <Box position="relative" w="200px" h="200px" mx="auto">
-          {/* <Image
-            src={faceImage}
-            alt="Face"
-            w="100%"
-            h="100%"
-            objectFit="contain"
-          /> */}
-
           <Box
             position="absolute"
             w="200px"
             h="200px"
-            bg="pink.300"
+            // bg="pink.300"
             borderRadius="full"
             cursor={clicks < maxClicks ? 'pointer' : 'default'}
-            opacity={clicks >= maxClicks ? 0.5 : 1}
+            // opacity={clicks >= maxClicks ? 0.5 : 1}
             _hover={clicks < maxClicks ? { transform: 'scale(1.1)' } : {}}
             transition="all 0.2s"
             onClick={handleCheekClick}
@@ -121,8 +119,15 @@ function Clicker({maxClicks, discount, decrease, timeout} : clickerProps) {
             justifyContent="center"
           >
             {
-                clicks < maxClicks ? (<Icon as={Star} size={20} color="white" fill="yellow"/>) : (<></>)
+                // clicks < maxClicks ? (<Icon as={Star} size={20} color="white" fill="yellow"/>) : (<></>)
             }
+            <Image
+              src={clickerImage}
+              alt="Face"
+              w="100%"
+              h="100%"
+              objectFit="contain"
+            />
           </Box>
         </Box>
 
