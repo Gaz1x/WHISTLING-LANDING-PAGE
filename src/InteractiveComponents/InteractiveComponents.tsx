@@ -13,8 +13,8 @@ function InteractiveComponents() {
                         <Image
                             src={paintSrc}
                             alt="Paint"
-                            w="120px"
-                            h="10px"
+                            w={{ base: "80px", md: "120px" }} 
+                            h="10px" 
                             fallback={<Box w="90px" h="15px" bg="yellow.400" mb={8}/>}
                             sx={{
                             transform: "scaleY(-1)",
@@ -24,8 +24,8 @@ function InteractiveComponents() {
                         <Image
                             src={paintSrc}
                             alt="Paint"
-                            w="120px"
-                            h="10px"
+                            w={{ base: "80px", md: "120px" }} 
+                            h="10px" 
                             fallback={<Box w="90px" h="15px" bg="yellow.400" mb={8}/>}
                             // mb={8}
                             sx={{

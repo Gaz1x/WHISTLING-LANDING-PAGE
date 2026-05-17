@@ -3,6 +3,8 @@ import Kate from "./images/Kate.jpg";
 import Artem from "./images/Artem.jpg";
 import Sasha from "./images/Sasha.jpg";
 import Nikita from "./images/Nikita.jpg"
+import Pasha from "./images/Pasha.jpg";
+import Kristina from "./images/Kristina.jpg";
 
 export interface CommentData {
   id: number;
@@ -46,5 +48,20 @@ export const commentsData: CommentData[] = [
     name: "Жуков Никита",
     avatar: Nikita,
     rating: 5,
-    text: "Круто провели время! Очень энергичный преподаватель, всё объясняет с юмором. Уже на следующий день смог насвистеть мелодию!",  }
+    text: "Круто провели время! Очень энергичный преподаватель, всё объясняет с юмором. Уже на следующий день смог насвистеть мелодию!",  
+  },
+  {
+    id: 6,
+    name: "Захаркин Павел",
+    avatar: Pasha,
+    rating: 5,
+    text: "Думал, это просто прикол, но после мастер-класса реально могу свистеть так, что мама из другой комнаты слышит! Одногруппники в шоке😎",
+  },
+  {
+    id: 7,
+    name: "Козлова Кристина",
+    avatar: Kristina,
+    rating: 5,
+    text: "Пришла за компанию с подругой, а ушла с новым навыком! Оказалось, свистеть двумя пальцами — это не так просто, но очень круто. Теперь могу подозвать такси без слов 🚕",
+  },
 ];

@@ -15,7 +15,7 @@ function Footer() {
                 h="auto"
                 overflow="hidden"
                 pointerEvents="none"
-                opacity={0.1}
+                opacity={0.05}
                 zIndex={0}
             >
                 <Image
@@ -59,7 +59,7 @@ function Footer() {
                         <Image
                             src={fullLogoSrc}
                             alt="Logo"
-                            h="200px"
+                            h="170px"
                             w="auto"
                             objectFit="cover"
                         />
